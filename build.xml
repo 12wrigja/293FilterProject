@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="build" name="chemistry">
+	<property environment="env" />
+	<property name="junit.output.dir" value="junit" />
+	<property name="debuglevel" value="source,lines,vars" />
+	<property name="target" value="1.7" />
+	<property name="source" value="1.7" />
+
+	<property name="main.source" value="src/main" />
+	<property name="test.source" value="src/test" />
+	<property name="build" value="bin" />
+	<property name="build_test" value="bin/test" />
+	<property name="lib" value="lib" />
+
+	<path id="main.classpath">
+		<fileset dir="${lib}">
+			<include name="**/*.jar" />
+		</fileset>
+		<path location="${build}" />
+	</path>
+
+	<path id="test.classpath">
+		<fileset dir="${lib}" id="libraries">
+			<include name="**/*.jar" />
+		</fileset>
+		<path location="${build}" />
+		<path location="${build_test}" />
+		<path refid="main.classpath" />
+	</path>
+
+	<target name="build">
+		<mkdir dir="${build}" />
+		<javac srcdir="${main.source}" destdir="${build}" includeantruntime="false" classpathref="main.classpath">
+			<!-- <classpath refid="main.classpath"/> -->
+		</javac>
+	</target>
+
+	<target name="buildTest" depends="build">
+		<mkdir dir="${build}" />
+		<mkdir dir="${build_test}" />
+		<javac srcdir="${test.source}" destdir="${build_test}" classpathref="test.classpath" debug="on" includeantruntime="false" />
+	</target>
+
+	<target name="test" depends="buildTest">
+		<junit printsummary="yes" haltonerror="no" fork="yes">
+			<classpath refid="test.classpath" />
+			<batchtest>
+				<fileset dir="${build_test}">
+					<include name="**/*.class" />
+					<exclude name = "**/*$*.class" />
+				</fileset>
+			</batchtest>
+			<assertions><enable/></assertions>
+		</junit>
+	</target>
+
+	
+	
+	<target name="clean">
+		<delete dir="${build}" />
+		<delete dir="${build_test}" />
+	</target>
+</project>
