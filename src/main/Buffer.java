@@ -2,7 +2,7 @@ package main;
 
 import java.util.Arrays;
 
-import main.filters.BufferException;
+import main.filters.exceptions.BufferException;
 
 public class Buffer<E> {
 	
