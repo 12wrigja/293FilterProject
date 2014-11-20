@@ -13,23 +13,23 @@ public class AverageFilterTest {
 	@Test
 	public void testAverageFilter(){
 		AverageFilter<Double> avgFilter = new AverageFilter<>();
-		avgFilter.filter(5.0);
-		avgFilter.filter(6.0);
-		avgFilter.filter(7.0);
-		avgFilter.filter(8.0);
-		avgFilter.filter(9.0);
+		avgFilter.filter(new Double(5.0));
+		avgFilter.filter(new Double(6.0));
+		avgFilter.filter(new Double(7.0));
+		avgFilter.filter(new Double(8.0));
+		avgFilter.filter(new Double(9.0));
 		assertEquals(new Double(7.0),avgFilter.getOutput());
 	}
 	
 	@Test
 	public void testAverageFilterReset(){
 		AverageFilter<Double> avgFilter = new AverageFilter<>();
-		avgFilter.filter(5.0);
-		avgFilter.filter(6.0);
-		avgFilter.filter(7.0);
-		avgFilter.reset(5.0);
-		avgFilter.filter(8.0);
-		avgFilter.filter(9.0);
+		avgFilter.filter(new Double(5.0));
+		avgFilter.filter(new Double(6.0));
+		avgFilter.filter(new Double(7.0));
+		avgFilter.reset(new Double(5.0));
+		avgFilter.filter(new Double(8.0));
+		avgFilter.filter(new Double(9.0));
 		assertEquals(new Double(7.33333333),avgFilter.getOutput(),tolerance);
 	}
 }
