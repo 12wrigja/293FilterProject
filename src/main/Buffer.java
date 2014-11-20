@@ -68,6 +68,15 @@ public class Buffer<E> {
 		return (index < 0)?index+=size:index;
 	}
 	
+	public void clear(E defaultObject){
+		startPointer = 0;
+		endPointer = 0;
+		fill_count = 0;
+		for(int i=0; i<buffer.length; i++){
+			buffer[i] = defaultObject;
+		}
+	}
+	
 	@Override
 	public String toString() {
 		return Arrays.deepToString(toArray());
