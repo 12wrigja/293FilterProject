@@ -12,7 +12,7 @@ public class AverageFilterTest {
 	
 	@Test
 	public void testAverageFilter(){
-		AverageFilter<Double> avgFilter = new AverageFilter<>();
+		AverageFilter avgFilter = new AverageFilter();
 		avgFilter.filter(new Double(5.0));
 		avgFilter.filter(new Double(6.0));
 		avgFilter.filter(new Double(7.0));
@@ -23,7 +23,7 @@ public class AverageFilterTest {
 	
 	@Test
 	public void testAverageFilterReset(){
-		AverageFilter<Double> avgFilter = new AverageFilter<>();
+		AverageFilter avgFilter = new AverageFilter();
 		avgFilter.filter(new Double(5.0));
 		avgFilter.filter(new Double(6.0));
 		avgFilter.filter(new Double(7.0));

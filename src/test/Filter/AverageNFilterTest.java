@@ -12,7 +12,7 @@ public class AverageNFilterTest {
 
 	@Test
 	public void testAverageFilter() {
-		AverageNFilter<Double> avgFilter = new AverageNFilter<>(5);
+		AverageNFilter avgFilter = new AverageNFilter(5);
 		avgFilter.filter(new Double(5.0));
 		assertEquals(new Double(5.0), avgFilter.getOutput(), tolerance);
 		avgFilter.filter(new Double(6.0));
@@ -35,7 +35,7 @@ public class AverageNFilterTest {
 
 	@Test
 	public void testAverageFilterReset() {
-		AverageNFilter<Double> avgFilter = new AverageNFilter<>(5);
+		AverageNFilter avgFilter = new AverageNFilter(5);
 		avgFilter.filter(new Double(5.0));
 		assertEquals(new Double(5.0), avgFilter.getOutput(), tolerance);
 		avgFilter.filter(new Double(6.0));
