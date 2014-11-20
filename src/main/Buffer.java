@@ -26,13 +26,15 @@ public class Buffer<E> {
 		}
 	}
 	
-	public void addFirst(E obj){
+	public E addFirst(E obj){
+		E returnItem = null;
 		if(fill_count == size){
-			removeLast();
+			returnItem = removeLast();
 		}
 		buffer[startPointer] = obj;
 		fill_count ++;
 		startPointer = wrapIndex(startPointer + 1);
+		return returnItem;
 	}
 	
 	public E removeLast(){	
