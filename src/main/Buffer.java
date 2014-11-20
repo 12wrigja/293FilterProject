@@ -26,16 +26,16 @@ public class Buffer<E> {
 		}
 	}
 	
-	public void push(E obj){
+	public void addFirst(E obj){
 		if(fill_count == size){
-			pop();
+			removeLast();
 		}
 		buffer[startPointer] = obj;
 		fill_count ++;
 		startPointer = wrapIndex(startPointer + 1);
 	}
 	
-	public E pop(){	
+	public E removeLast(){	
 		if(isEmpty()){
 			return null;
 		}
