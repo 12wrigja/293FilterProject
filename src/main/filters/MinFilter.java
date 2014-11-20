@@ -15,10 +15,10 @@ public class MinFilter<T> extends ExtremesFilter<T>{
 	}
 	
 	public static <T> MinFilter<T> newComparatorInstance(Comparator<T> comparator){
-		return new MinFilter<T>(comparator);
+		return new MinFilter<>(comparator);
 	}
 	
-	public static <T extends Comparable> MinFilter<T> newInstance(){
-			return new MinFilter<T>();
+	public static <T extends Comparable<T>> MinFilter<T> newInstance(){
+			return new MinFilter<>();
 	}
 }
