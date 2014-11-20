@@ -4,8 +4,8 @@ import main.Buffer;
 import main.filters.interfaces.ResetableFilter;
 import main.filters.interfaces.ScalarFilter;
 
-public class AverageNFilter<T extends Double> implements ScalarFilter<T>,
-		ResetableFilter<T> {
+public class AverageNFilter implements ScalarFilter,
+		ResetableFilter<Double> {
 
 	private double currentAverage = 0;
 	private Buffer<Double> storageBuffer;
@@ -15,7 +15,7 @@ public class AverageNFilter<T extends Double> implements ScalarFilter<T>,
 	}
 
 	@Override
-	public void filter(T input) {
+	public void filter(Double input) {
 		int count = storageBuffer.size();
 		Double poppedItem = storageBuffer.addFirst(input);
 		if (0 == count) {
@@ -30,12 +30,12 @@ public class AverageNFilter<T extends Double> implements ScalarFilter<T>,
 	}
 
 	@Override
-	public T getOutput() {
-		return (T) new Double(currentAverage);
+	public Double getOutput() {
+		return new Double(currentAverage);
 	}
 
 	@Override
-	public void reset(T nextInput) {
+	public void reset(Double nextInput) {
 		currentAverage = nextInput;
 		storageBuffer.clear(null);
 		storageBuffer.addFirst(nextInput);

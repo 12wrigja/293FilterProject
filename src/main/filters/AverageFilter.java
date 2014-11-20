@@ -3,13 +3,13 @@ package main.filters;
 import main.filters.interfaces.ResetableFilter;
 import main.filters.interfaces.ScalarFilter;
 
-public class AverageFilter<T extends Double> implements ScalarFilter<T>, ResetableFilter<T>{
+public class AverageFilter implements ScalarFilter, ResetableFilter<Double>{
 	
 	double currentAverage = 0;
 	double count = 0;	
 	
 	@Override
-	public void filter(T input) {
+	public void filter(Double input) {
 		if(0 == count){
 			currentAverage = input;
 		}else{
@@ -18,11 +18,12 @@ public class AverageFilter<T extends Double> implements ScalarFilter<T>, Resetab
 		count++;
 	}
 	@Override
-	public T getOutput() {
-		return (T) new Double(currentAverage);
+	public Double getOutput() {
+		return currentAverage;
 	}
+	
 	@Override
-	public void reset(T nextInput) {
+	public void reset(Double nextInput) {
 		count = 1;
 		currentAverage = nextInput;
 	}
