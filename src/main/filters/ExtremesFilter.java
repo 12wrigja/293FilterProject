@@ -6,28 +6,15 @@ import main.filters.interfaces.ResetableFilter;
 
 public abstract class ExtremesFilter<T> extends ComparableFilter<T> implements ResetableFilter<T>{
 	
-	protected enum FilterMode{MIN,MAX};
-	
-	private final FilterMode mode;
-	
-	private T extremeObject = null;
-	
-	protected ExtremesFilter(FilterMode mode){
-		this.mode = mode;
+	protected ExtremesFilter(main.filters.ComparableFilter.FilterMode mode) {
+		super(mode);
 	}
 	
-	protected ExtremesFilter(FilterMode mode, Comparator<T> comparator){
-		super(comparator);
-		this.mode = mode;
+	protected ExtremesFilter(main.filters.ComparableFilter.FilterMode mode,
+			Comparator<T> comparator) {
+		super(mode, comparator);
 	}
-	protected final boolean isMinFilter(){
-		return this.mode.equals(FilterMode.MIN);
-	}
-	
-	protected final boolean isMaxFilter(){
-		return this.mode.equals(FilterMode.MAX);
-	}
-	
+
 	@Override
 	public final void filter(T input) {
 		if(null == extremeObject){
@@ -63,8 +50,4 @@ public abstract class ExtremesFilter<T> extends ComparableFilter<T> implements R
 		this.extremeObject = nextInput;
 	}
 	
-	@Override
-	public final T getOutput() {
-		return extremeObject;
-	}
 }
