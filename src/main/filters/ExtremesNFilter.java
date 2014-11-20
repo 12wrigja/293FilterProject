@@ -10,8 +10,6 @@ public class ExtremesNFilter<T> extends ComparableFilter<T>{
 	protected final Buffer<T> valuesBuffer;
 	protected final TreeSet<T> comparisonHeap;
 	
-	protected T extremeObject;
-	
 	protected ExtremesNFilter(main.filters.ExtremesFilter.FilterMode mode, int size) {
 		super(mode);
 		valuesBuffer = new Buffer<>(size);
@@ -47,5 +45,6 @@ public class ExtremesNFilter<T> extends ComparableFilter<T>{
 		comparisonHeap.clear();
 		valuesBuffer.addFirst(nextInput);
 		comparisonHeap.add(nextInput);
+		extremeObject = nextInput;
 	}
 }
