@@ -6,12 +6,7 @@ import main.filters.interfaces.ScalarFilter;
 public class AverageFilter<T extends Double> implements ScalarFilter<T>, ResetableFilter<T>{
 	
 	double currentAverage = 0;
-	double count = 0;
-
-	public AverageFilter() {
-		
-	}
-	
+	double count = 0;	
 	
 	@Override
 	public void filter(T input) {
