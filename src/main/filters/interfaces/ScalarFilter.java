@@ -1,6 +1,6 @@
 package main.filters.interfaces;
 
 
-public interface ScalarFilter<T extends Double> extends Filter<T,T> {
+public interface ScalarFilter<Double> extends Filter<Double,Double> {
 
 }
