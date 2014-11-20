@@ -22,17 +22,8 @@ public abstract class ExtremesFilter<T> extends ComparableFilter<T> implements R
 			return;
 		}
 		int compareVal = compareToExtreme(input);
-		switch(mode){
-		case MIN:
-			if(compareVal < 0){
-				extremeObject = input;
-			}
-			break;
-		case MAX:
-			if(compareVal > 0){
-				extremeObject = input;
-			}
-			break;
+		if(shouldReplaceMinimum(compareVal) || shouldReplaceMaximum(compareVal)){
+			extremeObject = input;
 		}
 	}
 	
@@ -49,4 +40,11 @@ public abstract class ExtremesFilter<T> extends ComparableFilter<T> implements R
 		this.extremeObject = nextInput;
 	}
 	
+	private boolean shouldReplaceMinimum(int compareVal){
+		return mode == FilterMode.MIN && compareVal < 0;
+	}
+	
+	private boolean shouldReplaceMaximum(int compareVal){
+		return mode == FilterMode.MAX && compareVal > 0;
+	}
 }
