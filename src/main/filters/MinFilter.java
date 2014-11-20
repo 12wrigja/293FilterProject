@@ -2,8 +2,6 @@ package main.filters;
 
 import java.util.Comparator;
 
-import main.filters.interfaces.ResetableFilter;
-
 public class MinFilter<T> extends ExtremesFilter<T>{
 	
 	private MinFilter(){

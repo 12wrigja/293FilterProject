@@ -1,10 +1,9 @@
 package test.Buffer;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import main.Buffer;
 
 import org.junit.Test;
-
-import main.Buffer;
 
 public class BufferTests {
 	

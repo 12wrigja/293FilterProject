@@ -1,11 +1,10 @@
 package test.Filter;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Comparator;
 
 import main.filters.MaxFilter;
-import main.filters.MinFilter;
 
 import org.junit.Test;
 

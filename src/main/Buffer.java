@@ -2,8 +2,6 @@ package main;
 
 import java.util.Arrays;
 
-import main.filters.exceptions.BufferException;
-
 public class Buffer<E> {
 	
 	private final E[] buffer;
