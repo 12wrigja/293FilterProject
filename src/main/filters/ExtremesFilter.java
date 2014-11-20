@@ -34,7 +34,6 @@ public abstract class ExtremesFilter<T> extends ComparableFilter<T> implements R
 			}
 			break;
 		}
-		return;
 	}
 	
 	private final int compareToExtreme(T other){
