@@ -129,9 +129,9 @@ public class MinNFilterTest {
 		wordFilter.filter("pholidota");
 		assertEquals("bucketful",wordFilter.getOutput());
 		wordFilter.filter("unameliorative");
-		assertEquals("undeplored",wordFilter.getOutput());
+		assertEquals("pholidota",wordFilter.getOutput());
 		wordFilter.filter("associableness");
-		assertEquals("undeplored",wordFilter.getOutput());
+		assertEquals("pholidota",wordFilter.getOutput());
 		wordFilter.filter("iodopsin");
 		assertEquals("iodopsin",wordFilter.getOutput());
 		wordFilter.filter("steedlike");

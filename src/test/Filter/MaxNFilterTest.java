@@ -140,9 +140,9 @@ public class MaxNFilterTest {
 		wordFilter.filter("paracasein");
 		assertEquals("unameliorative",wordFilter.getOutput());
 		wordFilter.filter("queenliest");
-		assertEquals("paracasein",wordFilter.getOutput());
+		assertEquals("associableness",wordFilter.getOutput());
 		wordFilter.filter("rectifying");
-		assertEquals("paracasein",wordFilter.getOutput());
+		assertEquals("queenliest",wordFilter.getOutput());
 
 	}
 
@@ -198,9 +198,9 @@ public class MaxNFilterTest {
 		wordFilter.filter("paracasein");
 		assertEquals("unameliorative",wordFilter.getOutput());
 		wordFilter.filter("queenliest");
-		assertEquals("paracasein",wordFilter.getOutput());
+		assertEquals("associableness",wordFilter.getOutput());
 		wordFilter.filter("rectifying");
-		assertEquals("paracasein",wordFilter.getOutput());
+		assertEquals("queenliest",wordFilter.getOutput());
 		
 	}
 
