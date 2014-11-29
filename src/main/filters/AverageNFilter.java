@@ -1,8 +1,8 @@
 package main.filters;
 
-import main.Buffer;
 import main.filters.interfaces.ResetableFilter;
 import main.filters.interfaces.ScalarFilter;
+import main.utils.Buffer;
 
 public class AverageNFilter implements ScalarFilter,
 		ResetableFilter<Double> {

@@ -1,7 +1,7 @@
 package test.Buffer;
 
 import static org.junit.Assert.assertEquals;
-import main.Buffer;
+import main.utils.Buffer;
 
 import org.junit.Test;
 

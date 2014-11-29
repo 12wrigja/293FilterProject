@@ -3,7 +3,7 @@ package main.filters;
 import java.util.Comparator;
 import java.util.TreeSet;
 
-import main.Buffer;
+import main.utils.Buffer;
 
 public class ExtremesNFilter<T> extends ComparableFilter<T>{
 
