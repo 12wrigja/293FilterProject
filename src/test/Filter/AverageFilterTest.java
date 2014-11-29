@@ -1,10 +1,9 @@
 package test.Filter;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import main.filters.AverageFilter;
 
 import org.junit.Test;
-
-import main.filters.AverageFilter;
 
 public class AverageFilterTest {
 	

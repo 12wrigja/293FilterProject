@@ -1,7 +1,6 @@
 package test.Filter;
 
 import static org.junit.Assert.assertEquals;
-import main.filters.AverageFilter;
 import main.filters.AverageNFilter;
 
 import org.junit.Test;
