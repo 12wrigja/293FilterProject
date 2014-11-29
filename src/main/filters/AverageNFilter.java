@@ -4,12 +4,19 @@ import main.filters.interfaces.ResetableFilter;
 import main.filters.interfaces.ScalarFilter;
 import main.utils.Buffer;
 
+/**The AverageNFilter computes the average of the last N items passed to it as input.
+ * @author james
+ *
+ */
 public class AverageNFilter implements ScalarFilter,
 		ResetableFilter<Double> {
 
 	private double currentAverage = 0;
 	private Buffer<Double> storageBuffer;
 
+	/**Constructor for the AverageNFilter that accepts a number of items to remember and compute the average of.
+	 * @param size The number of items to remember.
+	 */
 	public AverageNFilter(int size) {
 		storageBuffer = new Buffer<>(size);
 	}
