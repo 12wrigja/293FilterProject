@@ -59,11 +59,7 @@ public abstract class ExtremesFilter<T> extends ComparableFilter<T> implements
 
 	@SuppressWarnings("unchecked")
 	private final int compareToExtreme(T other) {
-		if (null == comparator) {
-			return ((Comparable<T>) other).compareTo(extremeObject);
-		} else {
-			return comparator.compare(other, extremeObject);
-		}
+		return (null == comparator)?((Comparable<T>) other).compareTo(extremeObject) : comparator.compare(other, extremeObject);
 	}
 
 	@Override
