@@ -21,6 +21,8 @@ public abstract class ExtremesFilter<T> extends ComparableFilter<T> implements
 	 * {@link ComparableFilter}. This constructor accepts a FilterMode only.
 	 * 
 	 * @param mode
+	 *            The mode of the filter. See {@link FilterMode} for more
+	 *            information.
 	 */
 	protected ExtremesFilter(main.filters.ComparableFilter.FilterMode mode) {
 		super(mode);
@@ -32,6 +34,10 @@ public abstract class ExtremesFilter<T> extends ComparableFilter<T> implements
 	 * comparator.
 	 * 
 	 * @param mode
+	 *            The mode of the filter. See {@link FilterMode} for more
+	 *            information.
+	 * @param comparator
+	 *            The comparator to use when comparing objects.
 	 */
 	protected ExtremesFilter(main.filters.ComparableFilter.FilterMode mode,
 			Comparator<T> comparator) {
@@ -51,6 +57,7 @@ public abstract class ExtremesFilter<T> extends ComparableFilter<T> implements
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	private final int compareToExtreme(T other) {
 		if (null == comparator) {
 			return ((Comparable<T>) other).compareTo(extremeObject);
