@@ -58,12 +58,17 @@
 	</target>
 
 	<target name="javadoc" description="Creates javadoc for the filter api.">
-		<javadoc sourcepath="src/main" destdir="javadoc" classpathref="test.classpath" verbose = "true">
+		<javadoc destdir="${javadoc}" classpathref="main.classpath">
+			<fileset dir="src" defaultexcludes="yes">
+			  <include name="main/**"/>
+			  <exclude name="test/**"/>
+			</fileset>
 		</javadoc>
 	</target>
 
 	<target name="clean">
 		<delete dir="${build}" />
 		<delete dir="${build_test}" />
+		<delete dir="${javadoc}" />
 	</target>
 </project>
