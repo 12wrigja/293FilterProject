@@ -1,7 +1,6 @@
 package main.filters;
 
 import java.util.Comparator;
-
 import main.filters.interfaces.ResetableFilter;
 
 /**
@@ -21,7 +20,7 @@ public abstract class ExtremesFilter<T> extends ComparableFilter<T> implements
 	 * {@link ComparableFilter}. This constructor accepts a FilterMode only.
 	 * 
 	 * @param mode
-	 *            The mode of the filter. See {@link FilterMode} for more
+	 *            The mode of the filter. See {@link ComparableFilter.FilterMode FilterMode} for more
 	 *            information.
 	 */
 	protected ExtremesFilter(main.filters.ComparableFilter.FilterMode mode) {
@@ -34,7 +33,7 @@ public abstract class ExtremesFilter<T> extends ComparableFilter<T> implements
 	 * comparator.
 	 * 
 	 * @param mode
-	 *            The mode of the filter. See {@link FilterMode} for more
+	 *            The mode of the filter. See {@link ComparableFilter.FilterMode FilterMode} for more
 	 *            information.
 	 * @param comparator
 	 *            The comparator to use when comparing objects.

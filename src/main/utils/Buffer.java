@@ -104,7 +104,7 @@ public class Buffer<E> {
 	 * provided capacity. This returns the number of objects currently in the
 	 * buffer, which might be smaller than the capacity.
 	 * 
-	 * @return
+	 * @return Returns the current size of the buffer.
 	 */
 	public int size() {
 		return fill_count;
