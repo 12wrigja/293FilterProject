@@ -11,6 +11,8 @@
 	<property name="build" value="bin" />
 	<property name="build_test" value="bin/test" />
 	<property name="lib" value="lib" />
+	<property name="javadoc" value="javadoc" />
+
 
 	<path id="main.classpath">
 		<fileset dir="${lib}">
@@ -28,10 +30,9 @@
 		<path refid="main.classpath" />
 	</path>
 
-	<target name="build">
+	<target name="build" depends="clean">
 		<mkdir dir="${build}" />
 		<javac srcdir="${main.source}" destdir="${build}" includeantruntime="false" classpathref="main.classpath">
-			<!-- <classpath refid="main.classpath"/> -->
 		</javac>
 	</target>
 
@@ -47,15 +48,20 @@
 			<batchtest>
 				<fileset dir="${build_test}">
 					<include name="**/*.class" />
-					<exclude name = "**/*$*.class" />
+					<exclude name="**/*$*.class" />
 				</fileset>
 			</batchtest>
-			<assertions><enable/></assertions>
+			<assertions>
+				<enable />
+			</assertions>
 		</junit>
 	</target>
 
-	
-	
+	<target name="javadoc" description="Creates javadoc for the filter api.">
+		<javadoc sourcepath="src/main" destdir="javadoc" classpathref="test.classpath" verbose = "true">
+		</javadoc>
+	</target>
+
 	<target name="clean">
 		<delete dir="${build}" />
 		<delete dir="${build_test}" />
